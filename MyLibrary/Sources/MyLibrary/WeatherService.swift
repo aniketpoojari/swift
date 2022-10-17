@@ -4,6 +4,11 @@ public protocol WeatherService {
     func getTemperature() async throws -> Int
 }
 
+enum BaseUrl :String {
+    case realapi = "https://api.openweathermap.org/data/2.5/weather"
+    case moclserver = "http://localhost:3000/data/2.5/weather"
+}
+
 class WeatherServiceImpl: WeatherService {
     let url = "https://api.openweathermap.org/data/2.5/weather?q=corvallis&units=imperial&appid=<INSERT YOUR API KEY HERE>"
 
@@ -24,10 +29,10 @@ class WeatherServiceImpl: WeatherService {
     }
 }
 
-private struct Weather: Decodable {
-    let main: Main
+public struct Weather: Decodable {
+    public let main: Main
 
-    struct Main: Decodable {
-        let temp: Double
+    public struct Main: Decodable {
+        public let temp: Double
     }
 }
