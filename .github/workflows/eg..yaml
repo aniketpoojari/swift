@@ -12,8 +12,8 @@ jobs:
       - name: Run local server
         working-directory: ./MyLibrary
         run: |
-          pip install Flask
-          python app.py
+          pip install Flask 
+          python app.py &
       - name: Build
         working-directory: ./MyLibrary
         run: swift build
