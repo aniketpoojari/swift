@@ -32,6 +32,7 @@ final class MyLibraryTests: XCTestCase {
         // Then
         XCTAssertNotNil(temp)
         XCTAssert(temp == 50.0)
+    }
 
     func testIsLuckyBecauseWeAlreadyHaveLuckyNumber() async {
         // Given
