@@ -20,13 +20,13 @@ final class MyLibraryTests: XCTestCase {
     func checkNumber() async {
 
         // Given
-        let filepath = try XCTUnwrap(Bundle.module.path(forResource: "data", ofType: "json"))
-        let jsonString = try String(contentsOfFile: filepath)
+        let filepath = await XCTUnwrap(Bundle.module.path(forResource: "data", ofType: "json"))
+        let jsonString = await String(contentsOfFile: filepath)
         let jsonData = Data(jsonString.utf8)
         let jsonDecoder = JSONDecoder()
 
         // When
-        let weather = try jsonDecoder.decode(Weather.self, from: jsonData)
+        let weather = await jsonDecoder.decode(Weather.self, from: jsonData)
         let temp = weather.main.temp
 
         // Then
