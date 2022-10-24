@@ -20,7 +20,7 @@ final class MyLibraryTests: XCTestCase {
     func checkNumber() async throws {
 
         // Given
-        let filepath = try XCTUnwrap(Bundle.module.path(forResource: "data", ofType: "json"))
+        let filepath = try Bundle.module.path(forResource: "data", ofType: "json")
         let jsonString = try String(contentsOfFile: filepath)
         let jsonData = Data(jsonString.utf8)
         let jsonDecoder = JSONDecoder()
