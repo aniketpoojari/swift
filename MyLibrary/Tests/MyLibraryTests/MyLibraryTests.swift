@@ -26,7 +26,7 @@ final class MyLibraryTests: XCTestCase {
         let jsonDecoder = JSONDecoder()
 
         // When
-        let weather = try jsonDecoder.decode(Weather.self, from: jsonData)
+        let weather = try! jsonDecoder.decode(Weather.self, from: jsonData)
         let temp = weather.main.temp
 
         // Then
