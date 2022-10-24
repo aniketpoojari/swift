@@ -17,7 +17,7 @@ final class MyLibraryTests: XCTestCase {
         XCTAssert((temp as Any) is Int)
     }
 
-    func checkNumber() async {
+    func checkNumber() {
 
         // Given
         let filepath = XCTUnwrap(Bundle.module.path(forResource: "data", ofType: "json"))
